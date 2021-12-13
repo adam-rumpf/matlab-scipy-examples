@@ -12,7 +12,7 @@ Commerical software packages like MATLAB can be very good for making common math
 
 ## Contents
 
-This repo contains a variety of directories, each of which includes two files: a MATLAB `.m` file and a Python `.py` file. The two files are meant to correspond to each other, and to show how the same set of steps can be accomplished in each program. The following examples are included:
+This repo contains a variety of directories, each of which includes two files: a MATLAB `.m` file and a Python `.py` file. The two files are meant to correspond to each other (line-for-line where possible), and to show how the same set of steps can be accomplished in each program. The following examples are included:
 
 * **Logistic Map:** Numerically generating the bifurcation diagram for the [logistic map](https://en.wikipedia.org/wiki/Logistic_map).
 * **Lorenz System:** Numerically solving the [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system) and plotting the resulting curve in 3D space.
