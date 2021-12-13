@@ -14,8 +14,8 @@ Commerical software packages like MATLAB can be very good for making common math
 
 This repo contains a variety of directories, each of which includes two files: a MATLAB `.m` file and a Python `.py` file. The two files are meant to correspond to each other (line-for-line where possible), and to show how the same set of steps can be accomplished in each program. The following examples are included:
 
-* **Logistic Map:** Numerically generating the bifurcation diagram for the [logistic map](https://en.wikipedia.org/wiki/Logistic_map).
-* **Lorenz System:** Numerically solving the [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system) and plotting the resulting curve in 3D space.
-* **Lotka-Volterra System:** Numerically solving versions of the [Lotka-Volterra](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations) (predator/prey) system, and plotting the results in the phase plane.
-* **SIR Model:** Numerically solving the [SIR](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model_without_vital_dynamics) infectious disease model, and plotting the results.
-* **SVD:** Computing the [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition) of a matrix and illustrating the effects of the matrix on the unit ball.
+* [**Logistic Map:**](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/logistic-map) Numerically generating the bifurcation diagram for the [logistic map](https://en.wikipedia.org/wiki/Logistic_map).
+* [**Lorenz System:**](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/lorenz) Numerically solving the [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system) and plotting the resulting curve in 3D space.
+* [**Lotka-Volterra System:**](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/lotka-volterra) Numerically solving versions of the [Lotka-Volterra](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations) (predator/prey) system, and plotting the results in the phase plane.
+* [**SIR Model:**](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/sir) Numerically solving the [SIR](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model_without_vital_dynamics) infectious disease model, and plotting the results.
+* [**SVD:**](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/svd) Computing the [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition) of a matrix and illustrating the effects of the matrix on the unit ball.
