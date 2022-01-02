@@ -4,6 +4,8 @@
 
 A collection of small scripts demonstrating how to accomplish mathematical tasks in both [MATLAB](https://www.mathworks.com/products/matlab.html) (or [Octave](https://www.gnu.org/software/octave/index)) and in [Python](https://www.python.org/) using [SciPy](https://scipy.org/), [NumPy](https://numpy.org/), and [Matplotlib](https://matplotlib.org/).
 
+<img src="img/basics_cover.png" width="240px" title="Basic 3D plot demo." />
+
 ## Description
 
 This repo is primarily aimed at mathematicians and scientists whom are already used to using mathematical software packages for performing scientific computations, but whom wish to expand their options by working in a fully-fledged programming language. Commercial software packages can be somewhat limited in their functionality, and being able to perform the same tasks using a general programming language not only grants access to a much wider array of packages, but also allows these mathematical applications to be built into larger programs.
