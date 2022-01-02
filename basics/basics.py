@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 #=============================================================================
 # Basic linear algebra operations
@@ -184,6 +185,56 @@ print("\nsquare(y) =\n" + str(square(y)))
 # Basic plotting
 #=============================================================================
 
-###
-# 2D and 3D plots of curves/surfaces
-# Generating data with linspace and creating a plot of a simple function
+# Single 2D plot
+
+# In Pyplot, multiple series can be plotted on the same axis either by passing
+# all of them to the plot() function, or plotting them separately before using
+# the show() function.
+# Series labels in the legend are most easily added by defining them in the
+# 'label' keyword argument of the respective plot() function before calling the
+# legend() function.
+
+y1 = np.cos(x) # Generate function values on [0,2pi]
+y2 = np.sin(x)
+
+plt.figure() # Create a new figure window
+
+plt.plot(x, y1, 'r', label="cos(x)") # Plot a red solid line
+plt.plot(x, y2, 'b.', label="sin(x)") # Plot a blue dotted line
+plt.title("Example 1") # Figure title
+plt.xlabel("x") # x-axis label
+plt.ylabel("y") # y-axis label
+plt.legend() # Plot legend (automatically adopts legend keywords from plots)
+
+
+# Stacked 2D plots
+
+plt.figure()
+plt.subplot(2, 1, 1) # Target first tile in a 2x1 layout
+plt.plot(x, y1, 'r') # Plot first function
+plt.title("Example 2") # Add title above first subplot
+plt.subplot(2, 1, 2) # Target second tile in a 2x1 layout
+plt.plot(x, y2, 'b.') # Plot second function
+
+# 3D surface plots
+
+# Surface plots are usually generated with the help of NumPy's meshgrid()
+# function, which returns a pair of matrices: One whose rows are identical
+# copies of the x-values, and one whose columns are identical copies of the
+# y-values. The mesh of z-coordinates can then be computed by evaluating an
+# elementwise function with these two functions as the x- and y-values.
+
+[X, Y] = np.meshgrid(np.linspace(-4,4,41), np.linspace(-4,4,41)) # Grids
+
+def f(x, y): # Define a function for the surface
+	return 100*np.cos(x) + 1 - 10*y**2 + y**4
+
+
+Z = f(X, Y) # Generate z-coordinates
+
+plt.figure()
+ax = plt.axes(projection='3d') # Get handle for 3D axis in current figure
+ax.plot_surface(X, Y, Z) # Surface plot
+plt.title("Example 3")
+
+plt.show() # Show all generated figures

@@ -1,5 +1,6 @@
 
 
+
 %=============================================================================
 % Basic linear algebra operations
 %=============================================================================
@@ -186,22 +187,32 @@ disp(square(y));
 
 % Single 2D plot
 
+% In MATLAB, multiple series can be plotted on the same axis either by passing
+% all of them to the plot() function, or by toggling 'hold' to 'on' and then
+% plotting them separately.
+% Series labels in the legend are most easily added by specifying them, in
+% order, in the legend() function.
+
+
 y1 = cos(x); % Generate function values on [0,2pi]
 y2 = sin(x);
 
 figure % Create a new figure window
-title("Exmample 1") % Figure title
-plot(x, y1, 'r', x, y2, 'b.') % Plot a red solid line and blue dots
+hold on % Turn hold on to collect multiple plots in the same figure
+plot(x, y1, 'r') % Plot a red solid line
+plot(x, y2, 'b.') % Plot a blue dotted line
+title("Example 1") % Figure title
 xlabel("x") % x-axis label
 ylabel("y") % y-axis label
 legend("cos(x)", "sin(x)") % Plot legend
+hold off
 
 % Stacked 2D plots
 
 figure
-title("Example 2")
 subplot(2, 1, 1) % Target first tile in a 2x1 layout
 plot(x, y1, 'r') % Plot first function
+title("Example 2") % Add title above first subplot
 subplot(2, 1, 2) % Target second tile in a 2x1 layout
 plot(x, y2, 'b.') % Plot second function
 
@@ -222,5 +233,8 @@ end
 Z = f(X, Y); % Generate z-coordinates
 
 figure
-title("Example 3")
+
 surf(X, Y, Z) % Surface plot
+title("Example 3")
+
+
