@@ -184,6 +184,43 @@ disp(square(y));
 % Basic plotting
 %=============================================================================
 
-%%%
-% 2D and 3D plots of curves/surfaces
-% Generating data with linspace and creating a plot of a simple function
+% Single 2D plot
+
+y1 = cos(x); % Generate function values on [0,2pi]
+y2 = sin(x);
+
+figure % Create a new figure window
+title("Exmample 1") % Figure title
+plot(x, y1, 'r', x, y2, 'b.') % Plot a red solid line and blue dots
+xlabel("x") % x-axis label
+ylabel("y") % y-axis label
+legend("cos(x)", "sin(x)") % Plot legend
+
+% Stacked 2D plots
+
+figure
+title("Example 2")
+subplot(2, 1, 1) % Target first tile in a 2x1 layout
+plot(x, y1, 'r') % Plot first function
+subplot(2, 1, 2) % Target second tile in a 2x1 layout
+plot(x, y2, 'b.') % Plot second function
+
+% 3D surface plots
+
+% Surface plots are usually generated with the help of MATLAB's meshgrid()
+% function, which returns a pair of matrices: One whose rows are identical
+% copies of the x-values, and one whose columns are identical copies of the
+% y-values. The mesh of z-coordinates can then be computed by evaluating an
+% elementwise function with these two functions as the x- and y-values.
+
+[X, Y] = meshgrid(linspace(-4,4,41), linspace(-4,4,41)); % Generate grids
+
+function z = f(x, y) % Define a function for the surface
+	z = 100*cos(x) + 1 - 10*y.^2 + y.^4;
+end
+
+Z = f(X, Y); % Generate z-coordinates
+
+figure
+title("Example 3")
+surf(X, Y, Z) % Surface plot
