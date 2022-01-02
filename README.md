@@ -4,7 +4,7 @@
 
 A collection of small scripts demonstrating how to accomplish mathematical tasks in both [MATLAB](https://www.mathworks.com/products/matlab.html) (or [Octave](https://www.gnu.org/software/octave/index)) and in [Python](https://www.python.org/) using [SciPy](https://scipy.org/), [NumPy](https://numpy.org/), and [Matplotlib](https://matplotlib.org/).
 
-<p align="center"><img src="img/basics_cover.png" width="300px" title="Basic 3D plot demo." /></p>
+<p align="center"><a href="https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/basics"><img src="img/basics_cover.png" width="300px" title="Basic 3D plot demo." /></a></p>
 
 ## Description
 
