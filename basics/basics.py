@@ -77,7 +77,7 @@ print("\nx =\n" + str(x[:11]) + "\n...\n" + str(x[-10:]))
 
 
 
-y = np.array([i for i in range(10, -2, -2)]) # Vector of vals defined by a ran
+y = np.array([i for i in range(10, -2, -2)]) # Values defined by a range
 print("\ny =\n" + str(y))
 
 
@@ -128,7 +128,7 @@ print("\nEigenvectors of B:\n" + str(ev))
 
 
 print("\nX Lambda X^(-1) =")
-print(ev@np.diag(ew)@np.linalg.inv(ev)) # Demonstrating the eigendecomposition of B
+print(ev @ np.diag(ew) @ np.linalg.inv(ev)) # Eigendecomposition of B
 
 # Linear systems
 
