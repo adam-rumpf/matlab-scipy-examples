@@ -222,7 +222,7 @@ plt.plot(x, y2, 'b.') # Plot second function
 # function, which returns a pair of matrices: One whose rows are identical
 # copies of the x-values, and one whose columns are identical copies of the
 # y-values. The mesh of z-coordinates can then be computed by evaluating an
-# elementwise function with these two functions as the x- and y-values.
+# elementwise function with these two matrices as the x- and y-values.
 
 [X, Y] = np.meshgrid(np.linspace(-4,4,41), np.linspace(-4,4,41)) # Grids
 
