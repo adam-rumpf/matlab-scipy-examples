@@ -84,15 +84,51 @@ X = sol.y # get state variable attribute from solution object
 # Display various projections of the solution curve
 #=============================================================================
 
-###
 # Note that, due to the chaotic nature of the Lorenz system, the numerical
 # solutions from MATLAB and Python are expected to be slightly different.
-print(T)
-print(X[0])
-print(X[1])
-print(X[2])
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(X[0], X[1], X[2])
-plt.show()
-input("...")
+
+fig = plt.figure() # create a new figure object and store handle
+
+# Show xy-projection
+plt.subplot(2, 2, 1) # target first (NW) tile in a 2x2 layout
+plt.plot(X[:][0], X[:][1], linewidth=0.5) # plot y versus x
+plt.xlabel("x")
+plt.ylabel("y")
+
+# Show xz-projection
+plt.subplot(2, 2, 3) # target third (SW) tile in a 2x2 layout
+plt.plot(X[:][0], X[:][2], linewidth=0.5) # plot z versus x
+plt.xlabel("x")
+plt.ylabel("z")
+
+# Show yz-projection
+plt.subplot(2, 2, 2) # target second (NE) tile in a 2x2 layout
+plt.plot(X[:][1], X[:][2], linewidth=0.5) # plot z versus y
+plt.xlabel("y")
+plt.ylabel("z")
+
+# Set up axes for oblique projection
+ax = fig.add_subplot(2, 2, 4, projection="3d") # 3D axes in fourth (SE) tile
+ax.xaxis.pane.fill = False # remove fill colors from axis planes
+ax.yaxis.pane.fill = False
+ax.zaxis.pane.fill = False
+ax.xaxis.pane.set_edgecolor("w") # set axis plane edge colors to white
+ax.yaxis.pane.set_edgecolor("w")
+ax.zaxis.pane.set_edgecolor("w")
+ax.grid(False) # remove grid lines from axis planes
+
+# Generate 3D plot for oblique projection
+ax.plot3D(X[:][0], X[:][1], X[:][2], linewidth=1) # plot coordinates on 3D axes
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+ax.view_init(30, 135) # set view angle elevation and azimuth (respectively)
+
+# Add a title to the window
+fig.suptitle("The Lorenz Attractor")
+
+# Display the figure window
+fig.tight_layout() # automatically adjust subfigure margins to fit all text
+fig.show() # show the figure
+
+

@@ -91,32 +91,43 @@ figure % create a new figure window
 
 % Show xy-projection
 subplot(2, 2, 1) % target first (NW) tile in a 2x2 layout
-plot(X(:,1), X(:,2)) % plot y versus x
+plot(X(:,1), X(:,2), "LineWidth", 0.5) % plot y versus x
 xlabel("x")
 ylabel("y")
 
 % Show xz-projection
 subplot(2, 2, 3) % target third (SW) tile in a 2x2 layout
-plot(X(:,1), X(:,3)) % plot z versus x
+plot(X(:,1), X(:,3), "LineWidth", 0.5) % plot z versus x
 xlabel("x")
 ylabel("z")
 
 % Show yz-projection
 subplot(2, 2, 2) % target second (NE) tile in a 2x2 layout
-plot(X(:,2), X(:,3)) % plot z versus y
+plot(X(:,2), X(:,3), "LineWidth", 0.5) % plot z versus y
 xlabel("y")
 ylabel("z")
 
-% Show oblique projection
+% Set up axes for oblique projection
 subplot(2, 2, 4) % target fourth (SE) tile in a 2x2 layout
-plot3(X(:,1), X(:,2), X(:,3)) % plot 3D coordinates
+
+% In the Python version of this script, additional lines are required to
+% remove the default gray planes and grid lines included in 3D plots.
+% MATLAB does not automatically include these.
+
+
+
+
+% Generate 3D plot for oblique projection
+plot3(X(:,1), X(:,2), X(:,3), "LineWidth", 1) % plot 3D coordinates
 xlabel("x")
 ylabel("y")
 zlabel("z")
-view([225, 30]) % set view angle azimuth and elevation
+view([225, 30]) % set view angle azimuth and elevation (respectively)
 
 % Add a title to an empty window
 axes("visible", "off", "title", "The Lorenz Attractor")
+
+% MATLAB will automatically display the resulting figure.
 
 % Note that, as of MATLAB R2018b, a subplot grid can be more easily titled by
 % using the "sgtitle" function. This approach will work for older versions,
