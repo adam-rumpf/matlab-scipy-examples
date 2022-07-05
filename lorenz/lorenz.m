@@ -1,6 +1,7 @@
 
 
 
+
 %=============================================================================
 % Initialize attributes and define the Lorenz system
 %=============================================================================
@@ -23,6 +24,13 @@ z0 = 1; % initial z value
 ti = 0; % initial time value
 tf = 50; % final time value
 
+% The numerical ODE solver we'll be using below requires a function which
+% defines the righthand side of the differential equation, i.e. the function F
+% in the ODE x' = F(t,x).
+% This can be provided either by defining a local function and supplying its
+% handle, or by defining it as an inline function within the solver's arguments.
+% We will be defining it a local function "rhs" below.
+
 % Define a function to represent the righthand side of the Lorenz system
 function dx = rhs(T, X)
 	global sigma rho beta; % declare global variables
@@ -32,27 +40,51 @@ function dx = rhs(T, X)
 	dx(3) = X(1)*X(2) - beta*X(3);
 end
 
+% Note that the above could be accomplished in a single line as follows:
+% rhs = @(T,X) [sigma*(X(2) - X(1)); X(1)*(rho - X(3)) - X(2); ...
+%               X(1)*X(2) - beta*X(3)];
+
 %=============================================================================
 % Numerically solve the Lorenz system
 %=============================================================================
 
 % The Lorenz system is numerically solved using MATLAB's "ode45" function, a
 % widely-used implementation of an explicit Runge-Kutta (4,5) method.
+% MATLAB has no unified API for numerically solving ODEs, and instead each
+% different numerical method is implemented as a separate function with some
+% tuneable parameters.
+
+
 
 % Set precision for ODE solver
 options = odeset("RelTol", 0.0000001);
 
-% The first argument of ode45 is a function handle or an inline function. The
-% first argument of this function must always be time, while the second must
-% always be a vector of state variables. In MATLAB this can be accomplished
-% either by defining a local function (as we've done above with the "rhs"
-% function) or by defining an inline function within ode45, itself.
-% The second argument is a list of time values of the form [initial, final].
-% The third is a list of initial values of the form [x0, y0, z0].
-% The fourth is a set of ODE solver options.
+% The arguments of ode45 include, respectively: the function of time T and
+% the vector of state variables X which defines the righthand side of the
+% ODE system, followed by a time interval of the form [initial, final],
+% followed by a list of initial values of the form [x0, y0, z0]. The optional
+% fourth argument is a set of ODE solver options.
+
+
 
 [T, X] = ode45(@(T,X) rhs(T, X), [ti, tf], [x0, y0, z0], options);
+
+
+
+% T is now a list of time values, while X is a matrix whose columns contain
+% the numerical values of the x, y, and z variables.
+
+% Note that, if we had not defined the function rhs above, we could include
+% it as an inline function here by replacing the first argument with:
+% @(T,X) [sigma*(X(2) - X(1)); X(1)*(rho - X(3)) - X(2); ...
+%         X(1)*X(2) - beta*X(3)]
+% This may sometimes be worthwhile if the ODE in question is very simple.
 
 %=============================================================================
 % Display various projections of the solution curve
 %=============================================================================
+
+%###
+% Note that, due to the chaotic nature of the Lorenz system, the numerical
+% solutions from MATLAB and Python are expected to be slightly different.
+disp([T, X]);
