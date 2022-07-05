@@ -84,7 +84,40 @@ options = odeset("RelTol", 0.0000001);
 % Display various projections of the solution curve
 %=============================================================================
 
-%###
 % Note that, due to the chaotic nature of the Lorenz system, the numerical
 % solutions from MATLAB and Python are expected to be slightly different.
-disp([T, X]);
+
+figure % create a new figure window
+
+% Show xy-projection
+subplot(2, 2, 1) % target first (NW) tile in a 2x2 layout
+plot(X(:,1), X(:,2)) % plot y versus x
+xlabel("x")
+ylabel("y")
+
+% Show xz-projection
+subplot(2, 2, 3) % target third (SW) tile in a 2x2 layout
+plot(X(:,1), X(:,3)) % plot z versus x
+xlabel("x")
+ylabel("z")
+
+% Show yz-projection
+subplot(2, 2, 2) % target second (NE) tile in a 2x2 layout
+plot(X(:,2), X(:,3)) % plot z versus y
+xlabel("y")
+ylabel("z")
+
+% Show oblique projection
+subplot(2, 2, 4) % target fourth (SE) tile in a 2x2 layout
+plot3(X(:,1), X(:,2), X(:,3)) % plot 3D coordinates
+xlabel("x")
+ylabel("y")
+zlabel("z")
+view([225, 30]) % set view angle azimuth and elevation
+
+% Add a title to an empty window
+axes("visible", "off", "title", "The Lorenz Attractor")
+
+% Note that, as of MATLAB R2018b, a subplot grid can be more easily titled by
+% using the "sgtitle" function. This approach will work for older versions,
+% and also for Octave.
