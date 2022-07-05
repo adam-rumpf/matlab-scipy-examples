@@ -67,7 +67,7 @@ def rhs(T, X):
 # method used by the solver, as well as a variety of keyword arguments to tune
 # the behavior of the solver.
 
-sol = solve_ivp(rhs, (ti, tf), [x0, y0, z0], method="RK45", rtol=0.000001)
+sol = solve_ivp(rhs, (ti, tf), [x0, y0, z0], method="RK45", rtol=0.0000001)
 T = sol.t # get time attribute from solution object
 X = sol.y # get state variable attribute from solution object
 
