@@ -4,28 +4,33 @@
 
 A collection of small scripts demonstrating how to accomplish mathematical tasks in both [MATLAB](https://www.mathworks.com/products/matlab.html) (or [Octave](https://www.gnu.org/software/octave/index)) and in [Python](https://www.python.org/) using [SciPy](https://scipy.org/), [NumPy](https://numpy.org/), and [Matplotlib](https://matplotlib.org/).
 
+<p align="center"><a href="https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/basics"><img src="img/basics_cover.png" height="300px" title="Basic 3D plot demo." /></a></p>
+
 ## Description
 
 This repo is primarily aimed at mathematicians and scientists whom are already used to using mathematical software packages for performing scientific computations, but whom wish to expand their options by working in a fully-fledged programming language. Commercial software packages can be somewhat limited in their functionality, and being able to perform the same tasks using a general programming language not only grants access to a much wider array of packages, but also allows these mathematical applications to be built into larger programs.
 
 This repo contains a collection of example scripts to show how common mathematical tasks can be performed in MATLAB and in Python, with the goal of demonstrating how to convert a MATLAB program into an equivalent Python program. This is accomplished primarily through the use of the [`ndarray`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html) object and the [`linalg`](https://numpy.org/doc/stable/reference/routines.linalg.html) module from [NumPy](https://numpy.org/), which provide a MATLAB-like syntax for working with matrices, and the [`pyplot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html) module from [Matplotlib](https://matplotlib.org/), which provides a MATLAB-like syntax for creating plots.
 
-This repo containss a collection of example scripts for comparing how common mathematical tasks can be performed in MATLAB and in Python, with the goal of demonstrating how to convert a MATLAB program into an equivalent Python program. Each subdirectory contains a MATLAB `.m` file alongside a Python `.py` file. The two files are meant to correspond to each other (line-for-line where possible) and to show how the same set of steps can be accomplished in each program.
+Each subdirectory contains a MATLAB `.m` file alongside a Python `.py` file. The two files are meant to correspond to each other (line-for-line where possible) and to show how the same set of steps can be accomplished in each program.
 
 ## Contents
 
+* [The Basics](#the-basics)
+* [The Lorenz System](#the-lorenz-system)
+
 ### The Basics
 
-<p align="center"><a href="https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/basics"><img src="img/basics_cover.png" width="240px" title="Basic 3D plot demo." /></a></p>
+<p align="center"><img src="img/basics_m.png" height="200px" title="MATLAB 3D plot." /> <img src="img/basics_py.png" height="200px" title="Python 3D plot." /></p>
 
-[`basics/`](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/basics)
+[Directory Link](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/basics)
 
-A variety of basic programming structures (such as loops, conditional statements, and functions) and mathematical commands (such as matrix and vector operations, solving linear systems, and creating plots).
+Demonstrations for a variety of basic programming structures (such as loops, conditional statements, and functions) and mathematical commands (such as matrix and vector operations, solving linear systems, and creating plots).
 
 ### The Lorenz System
 
-<p align="center"><a href="https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/lorenz"><img src="img/lorenz_cover.png" width="240px" title="The Lorenz attractor." /></a></p>
+<p align="center"><img src="img/lorenz_m.png" height="200px" title="MATLAB Lorenz system plots." /> <img src="img/lorenz_py.png" height="200px" title="Python Lorenz system plots." /></p>
 
-[`lorenz/`](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/lorenz)
+[Directory Link](https://github.com/adam-rumpf/matlab-scipy-examples/tree/main/lorenz)
 
-Numerically solving the [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system) of ordinary differential equations and plotting the resulting curve in 3D space viewed from various perspectives.
+An example of numerically solving the [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system) of ordinary differential equations and plotting the resulting curve in 3D space viewed from various perspectives. This demonstrates the general approach for numerically solving initial value problems as well as displaying figures arranged in a grid.
