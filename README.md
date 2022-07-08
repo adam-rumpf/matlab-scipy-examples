@@ -12,7 +12,7 @@ This repo is primarily aimed at mathematicians and scientists whom are already u
 
 This repo contains a collection of example scripts to show how common mathematical tasks can be performed in MATLAB and in Python, with the goal of demonstrating how to convert a MATLAB program into an equivalent Python program. This is accomplished primarily through the use of the [`ndarray`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html) object and the [`linalg`](https://numpy.org/doc/stable/reference/routines.linalg.html) module from [NumPy](https://numpy.org/), which provide a MATLAB-like syntax for working with vectors and matrices, and the [`pyplot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html) module from [Matplotlib](https://matplotlib.org/), which provides a MATLAB-like syntax for creating plots.
 
-Each subdirectory contains a MATLAB `.m` file alongside a Python `.py` file. The two files are meant to correspond to each other (line-for-line where possible) and to show how the same set of steps can be accomplished in each program.
+Each subdirectory contains MATLAB `.m` files and Python `.py` files. The two files are meant to correspond to each other (line-for-line where possible) and to show how the same set of steps can be accomplished in each program. The files named after the directory are standalone versions of the MATLAB and Python scripts, while the files with an `_appended` suffix include both versions alongside each other to make the line-by-line comparison more clear.
 
 ## Contents
 
