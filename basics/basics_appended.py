@@ -72,8 +72,8 @@ print("\nw =\n" + str(w))                                                       
                                                                                  # disp(w);
                                                                                  # 
 x = np.linspace(0, 2*np.pi, 101) # Vector of equally-spaced values on [0,2pi]    # x = linspace(0, 2*pi, 101); % Row vector of equally-spaced values on [0,2pi]
-print("\nx =\n" + str(x[:11]) + "\n...\n" + str(x[-10:]))                        # disp("\nx =");
-                                                                                 # disp(x(1:10));
+# print("\nx =\n" + str(x[:11]) + "\n...\n" + str(x[-10:]))                      # disp("\nx =");
+print("\nx =\n" + str(x[:10]) + "\n...\n" + str(x[-11:]))                        # disp(x(1:10));
                                                                                  # disp("...");
                                                                                  # disp(x(end-10:end));
                                                                                  # 
